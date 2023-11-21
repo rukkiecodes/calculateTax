@@ -8,9 +8,13 @@ export default (prop1, prop2, profile, addTax) => {
 
         const totalAmount = baseAmount + taxAmount;
 
+        const percentage = ((totalAmount - baseAmount) / baseAmount) * 100
+
+
         resolve({
             totalAmount: parseFloat(totalAmount),
-            taxAmount: parseFloat(taxAmount)
+            taxAmount: parseFloat(taxAmount),
+            percentage: parseFloat(percentage)
         });
     });
 };
